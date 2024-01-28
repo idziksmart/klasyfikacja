@@ -1,0 +1,15 @@
+Aktualizacja hipotezy:
+# Kolumny do analizy
+columns_to_analyze = ["MonthlyIncome", "JobSatisfaction", "EnvironmentSatisfaction", "WorkLifeBalance", "DistanceFromHome", "TotalWorkingYears"]
+
+# Utwórz podzbiór danych zawierający wybrane kolumny
+subset_df = combined_df[columns_to_analyze]
+
+# Oblicz macierz korelacji dla podzbioru danych
+correlation_matrix = subset_df.corr()
+
+# Wybierz kolumnę korelacji z Attrition = "Yes" (ostatnia kolumna), a następnie posortuj wartości
+correlation_with_attrition_no = correlation_matrix.iloc[:-1, -1].sort_values()
+
+# Wyświetl wyniki
+print(correlation_with_attrition_no)
