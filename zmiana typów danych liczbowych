@@ -1,0 +1,10 @@
+# Lista kolumn zawierających informacje o latach
+columns_to_convert = ['DistanceFromHome', 'JobSatisfaction', 'MonthlyIncome', 
+                      'TotalWorkingYears', 'YearsAtCompany', 'YearsInCurrentRole', 
+                      'YearsSinceLastPromotion', 'YearsWithCurrManager']
+
+# Konwersja kolumn na format liczbowy
+combined_df[columns_to_convert] = combined_df[columns_to_convert].astype(float)
+
+# Sprawdzenie typów danych w kolumnach, aby potwierdzić dokonaną konwersję
+print(combined_df.dtypes)
