@@ -1,0 +1,17 @@
+from sklearn.preprocessing import LabelEncoder
+
+# Tworzenie kopii DataFrame do przetwarzania
+processed_df = combined_df.copy()
+
+# Encoder do przekształcenia zmiennych kategorycznych
+label_encoder = LabelEncoder()
+
+# Lista kolumn kategorycznych do przekształcenia
+categorical_cols = processed_df.select_dtypes(include=['object']).columns
+
+# Przekształcenie każdej kolumny kategorycznej
+for col in categorical_cols:
+    processed_df[col] = label_encoder.fit_transform(processed_df[col])
+
+# Sprawdzenie wyników przekształcenia
+processed_df.head()
