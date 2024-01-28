@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Tworzenie macierzy korelacji
+correlation_matrix = combined_df.corr()
+
+# Tworzenie wykresu
+plt.figure(figsize=(15, 15))
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm')
+
+# Tytuł wykresu
+plt.title("Macierz korelacji dla połączonych danych")
+plt.show()
